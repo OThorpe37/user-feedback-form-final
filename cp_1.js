@@ -22,4 +22,9 @@ form.addEventListener("submit", function(event){
         event.preventDefault();
         alert("Please fill out all fields before submitting.");
     }
+    const feedbackEntry = document.createElement("p");
+    feedbackEntry.textContent = `Name: ${nameInput.value}, Email: ${emailInput.value}, Comments: ${commentsInput.value}`;
+    feedbackDisplay.appendChild(feedbackEntry);
+
+    form.reset()
 });
