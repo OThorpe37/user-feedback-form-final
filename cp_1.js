@@ -40,3 +40,11 @@ form.addEventListener("mouseover",function(event){
         console.log("Mouseover on comments textarea");
     }
 })
+
+form.addEventListener("click", function(event){
+    event.stopPropagation();
+});
+
+document.body.addEventListener("click", function(){
+    console.log("Background clicked");
+}
