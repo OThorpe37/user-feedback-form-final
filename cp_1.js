@@ -13,9 +13,21 @@ commentsInput.addEventListener("input", function() {
 nameInput.addEventListener("mouseover", function(){
     document.getElementById("name-tip").style.display = "block";
 })
-nameInput.addEventListener("mouseout"), function(){
+nameInput.addEventListener("mouseout", function(){
     document.getElementById("name-tip").style.display = "none";
-}
+})
+nameInput.addEventListener("mouseover", function(){
+    document.getElementById("email-tip").style.display = "block";
+})
+nameInput.addEventListener("mouseout", function(){
+    document.getElementById("email-tip").style.display = "none";
+})
+nameInput.addEventListener("mouseover", function(){
+    document.getElementById("comment-tip").style.display = "block";
+})
+nameInput.addEventListener("mouseout", function(){
+    document.getElementById("comment-tip").style.display = "none";
+})
 
 form.addEventListener("submit", function(event){
     if(nameInput.value === "" || emailInput.value === "" || commentsInput.value === ""){
@@ -45,6 +57,6 @@ form.addEventListener("click", function(event){
     event.stopPropagation();
 });
 
-document.body.addEventListener("click", function(){
+document.body.addEventListener("click"), function(){
     console.log("Background clicked");
 }

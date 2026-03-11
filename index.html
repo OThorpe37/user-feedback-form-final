@@ -12,14 +12,14 @@
 <h1>User Feedback</h1>
 
 <form id="feedback-form">
-    <label>Name</label>
-    <input type="text" id="name">
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
     <span id="name-tip" class="tooltip">Please enter your full name.</span>
-    <label>Email</label>
-    <input type="email" id="email">
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
     <span id="email-tip" class="tooltip">Please enter a valid email address.</span>
-    <label>Comments</label>
-    <textarea id="comments"></textarea>
+    <label for="comments">Comments</label>
+    <textarea id="comments" required></textarea>
     <span id="comment-tip" class="tooltip">Please enter your feedback.</span>
     <p id="char-count">0 characters</p>
     <button type="submit">Submit</button>
