@@ -10,28 +10,33 @@ commentsInput.addEventListener("input", function() {
     charCount.textContent = count + " characters";
 });
 
-nameInput.addEventListener("mouseover", function(){
-    document.getElementById("name-tip").style.display = "block";
-})
-nameInput.addEventListener("mouseout", function(){
-    document.getElementById("name-tip").style.display = "none";
-})
-emailInput.addEventListener("mouseover", function(){
-    document.getElementById("email-tip").style.display = "block";
-})
-emailInput.addEventListener("mouseout", function(){
-    document.getElementById("email-tip").style.display = "none";
-})
-commentsInput.addEventListener("mouseover", function(){
-    document.getElementById("comment-tip").style.display = "block";
-})
-commentsInput.addEventListener("mouseout", function(){
-    document.getElementById("comment-tip").style.display = "none";
-})
+form.addEventListener("mouseover", function(event){
+    if(event.target === "name"){
+        document.getElementById("name-tip").style.display = "block";
+    }
+    if(event.target === "email"){
+        document.getElementById("email-tip").style.display = "block";
+    }
+    if(event.target === "comments"){
+        document.getElementById("comment-tip").style.display = "block";
+    }
+});
+
+form.addEventListener("mouseout", function(event){
+    if(event.target === "name"){
+        document.getElementById("name-tip").style.display = "none";
+    }
+    if(event.target === "email"){
+        document.getElementById("email-tip").style.display = "none";
+    }
+    if(event.target === "comments"){
+        document.getElementById("comment-tip").style.display = "none";
+    }
+});
 
 form.addEventListener("submit", function(event){
+    event.preventDefault();
     if(nameInput.value === "" || emailInput.value === "" || commentsInput.value === ""){
-        event.preventDefault();
         alert("Please fill out all fields before submitting.");
         return;
     }
@@ -40,21 +45,10 @@ form.addEventListener("submit", function(event){
     feedbackDisplay.appendChild(feedbackEntry);
 
     form.reset();
+    charCount.textContent = "0 characters";
 });
 
-form.addEventListener("mouseover",function(event){
-    if(event.target.id === "name"){
-        console.log("Mouseover on name input");
-    }
-    if(event.target.id === "email"){
-        console.log("Mouseover on email input");
-    }
-    if(event.target.id === "comments"){
-        console.log("Mouseover on comments textarea");
-    }
-})
-
-form.addEventListener("click", function(event){
+form.addEventListener("click",function(event){
     event.stopPropagation();
 });
 
