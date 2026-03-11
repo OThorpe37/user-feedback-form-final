@@ -28,3 +28,15 @@ form.addEventListener("submit", function(event){
 
     form.reset()
 });
+
+form.addEventListener("mouseover",function(event){
+    if(event.target === "name"){
+        console.log("Mouseover on name input");
+    }
+    if(event.target.id === "email"){
+        console.log("Mouseover on email input");
+    }
+    if(event.target.id === "comments"){
+        console.log("Mouseover on comments textarea");
+    }
+})
