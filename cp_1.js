@@ -9,3 +9,10 @@ commentsInput.addEventListener("input", function() {
     let count = commentsInput.value.length;
     charCount.textContent = count + " characters";
 });
+
+nameInput.addEventListener("mouseover", function(){
+    document.getElementById("name-tip").style.display = "block";
+})
+nameInput.addEventListener("mouseout", function(){
+    document.getElementById("name-tip").style.display = "none";
+}
