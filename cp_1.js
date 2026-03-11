@@ -11,25 +11,25 @@ commentsInput.addEventListener("input", function() {
 });
 
 form.addEventListener("mouseover", function(event){
-    if(event.target === "name"){
+    if(event.target.id === "name"){
         document.getElementById("name-tip").style.display = "block";
     }
-    if(event.target === "email"){
+    if(event.target.id === "email"){
         document.getElementById("email-tip").style.display = "block";
     }
-    if(event.target === "comments"){
+    if(event.target.id === "comments"){
         document.getElementById("comment-tip").style.display = "block";
     }
 });
 
 form.addEventListener("mouseout", function(event){
-    if(event.target === "name"){
+    if(event.target.id === "name"){
         document.getElementById("name-tip").style.display = "none";
     }
-    if(event.target === "email"){
+    if(event.target.id === "email"){
         document.getElementById("email-tip").style.display = "none";
     }
-    if(event.target === "comments"){
+    if(event.target.id === "comments"){
         document.getElementById("comment-tip").style.display = "none";
     }
 });
