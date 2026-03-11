@@ -16,16 +16,16 @@ nameInput.addEventListener("mouseover", function(){
 nameInput.addEventListener("mouseout", function(){
     document.getElementById("name-tip").style.display = "none";
 })
-nameInput.addEventListener("mouseover", function(){
+emailInput.addEventListener("mouseover", function(){
     document.getElementById("email-tip").style.display = "block";
 })
-nameInput.addEventListener("mouseout", function(){
+emailInput.addEventListener("mouseout", function(){
     document.getElementById("email-tip").style.display = "none";
 })
-nameInput.addEventListener("mouseover", function(){
+commentsInput.addEventListener("mouseover", function(){
     document.getElementById("comment-tip").style.display = "block";
 })
-nameInput.addEventListener("mouseout", function(){
+commentsInput.addEventListener("mouseout", function(){
     document.getElementById("comment-tip").style.display = "none";
 })
 
@@ -33,16 +33,17 @@ form.addEventListener("submit", function(event){
     if(nameInput.value === "" || emailInput.value === "" || commentsInput.value === ""){
         event.preventDefault();
         alert("Please fill out all fields before submitting.");
+        return;
     }
     const feedbackEntry = document.createElement("p");
     feedbackEntry.textContent = `Name: ${nameInput.value}, Email: ${emailInput.value}, Comments: ${commentsInput.value}`;
     feedbackDisplay.appendChild(feedbackEntry);
 
-    form.reset()
+    form.reset();
 });
 
 form.addEventListener("mouseover",function(event){
-    if(event.target === "name"){
+    if(event.target.id === "name"){
         console.log("Mouseover on name input");
     }
     if(event.target.id === "email"){
@@ -57,6 +58,6 @@ form.addEventListener("click", function(event){
     event.stopPropagation();
 });
 
-document.body.addEventListener("click"), function(){
+document.body.addEventListener("click", function(){
     console.log("Background clicked");
-}
+});
