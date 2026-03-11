@@ -13,6 +13,13 @@ commentsInput.addEventListener("input", function() {
 nameInput.addEventListener("mouseover", function(){
     document.getElementById("name-tip").style.display = "block";
 })
-nameInput.addEventListener("mouseout", function(){
+nameInput.addEventListener("mouseout"), function(){
     document.getElementById("name-tip").style.display = "none";
 }
+
+form.addEventListener("submit", function(event){
+    if(nameInput.value === "" || emailInput.value === "" || commentsInput.value === ""){
+        event.preventDefault();
+        alert("Please fill out all fields before submitting.");
+    }
+});
